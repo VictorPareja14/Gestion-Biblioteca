@@ -12,7 +12,7 @@ import java.util.Scanner;
 public class Init {
 
     @Autowired
-    private BookService bookService;
+    BookService bookService;
 
     public void displayMenu() {
         try (Scanner scanner = new Scanner(System.in)) {

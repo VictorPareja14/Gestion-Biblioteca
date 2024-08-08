@@ -12,10 +12,10 @@ import java.util.List;
 public class BookService {
 
     @Autowired
-    private BookRepository bookRepository;
+    BookRepository bookRepository;
 
-    public Book addBook(Book book) {
-        return bookRepository.save(book);
+    public void addBook(Book book) {
+        bookRepository.save(book);
     }
 
     public List<Book> listAllBooks() {
@@ -26,13 +26,14 @@ public class BookService {
         return bookRepository.findById(id).orElse(null);
     }
 
-    public Book updateBook(Book book) {
-        return bookRepository.save(book);
+    public void updateBook(Book book) {
+        bookRepository.save(book);
     }
 
     public void deleteBook(Long id) {
         bookRepository.deleteById(id);
     }
+
     public boolean doesBookExist(Long id) {
         return bookRepository.existsById(id);
     }
