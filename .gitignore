@@ -1,7 +1,6 @@
 # Ignorar mvnw y mvnw.cmd
 mvnw
 mvnw.cmd
-
 # Ignorar la carpeta .mvn/wrapper excepto el maven-wrapper.jar
 .mvn/wrapper/
 !.mvn/wrapper/maven-wrapper.jar
