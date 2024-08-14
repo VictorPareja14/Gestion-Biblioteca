@@ -48,7 +48,7 @@ public class BookController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
 
-        book.setId(id); // Asegurarse de que el ID del libro coincida con el proporcionado
+        book.setId(id);
         Book updatedBook = bookService.updateBook(book);
         return new ResponseEntity<>(updatedBook, HttpStatus.OK);
     }
@@ -81,12 +81,5 @@ public class BookController {
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
-    }
-
-    @Operation(summary = "Check if a book exists", description = "Check if a book with the given ID exists")
-    @GetMapping("/{id}/exists")
-    public ResponseEntity<Boolean> doesBookExist(@PathVariable Long id) {
-        boolean exists = bookService.doesBookExist(id);
-        return ResponseEntity.ok(exists);
     }
 }
